@@ -1,0 +1,110 @@
+:root{
+    --clr-light: #f399bf;
+    --clr-accent: #823665;
+    --clr-neutral: #fff;
+    --clr-dark: #2c222a;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-accent: 'Playfair Display', serif;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    min-width: 300px;
+}
+
+body,
+h1,
+h2,
+h3,
+p{
+    margin: 0;
+}
+
+h1,
+h2,
+h3{
+    color: var(--clr-accent);
+    font-family: var(--ff-accent);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+h2,
+h3,
+p{
+    margin-bottom: 1em;
+}
+.text-center{
+    text-align: center;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+header,
+section{
+    padding: 3rem 0;
+}
+@media (min-width: 40em){
+    header,
+    section{
+    padding: 7rem 0;
+    }
+}
+
+
+
+.container{
+    margin-inline: auto;
+    width: min(90%, 70.5rem)
+}
+
+
+.split{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 40em){
+    .split{
+        flex-direction: row;
+    }
+    /* esto es para que los children del split midan lo mismo adentro del div.split */
+    .split > * {
+        flex-basis: 100%
+    }
+    /* cualquier elemento que tiene un sibling antes, le agrega el margen */
+    .split > * + *{
+        margin-left: 2em;
+    }
+}
+
+.container--narrow{
+    max-width: 35rem;
+}
+
+.bg-light{ 
+    background-color: var(--clr-light);
+}
+.bg-dark{ 
+    color: var(--clr-neutral);
+    background-color: var(--clr-dark);
+}
+.bg-accent{ 
+    color: var(--clr-neutral);
+    background-color: var(--clr-accent);
+}
+.bg-dark h2,
+.bg-accent h2{
+    color: var(--clr-light);
+}
